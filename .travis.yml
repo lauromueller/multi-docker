@@ -15,9 +15,9 @@ after_success:
   - docker build -t lauromueller/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push lauromueller/multi-client
-  - docker push lauromueller/multi-client
-  - docker push lauromueller/multi-client
-  - docker push lauromueller/multi-client
+  - docker push lauromueller/multi-nginx
+  - docker push lauromueller/multi-server
+  - docker push lauromueller/multi-worker
 
 deploy:
   provider: elasticbeanstalk
